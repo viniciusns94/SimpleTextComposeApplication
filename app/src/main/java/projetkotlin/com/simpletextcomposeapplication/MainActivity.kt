@@ -3,6 +3,7 @@ package projetkotlin.com.simpletextcomposeapplication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 
@@ -25,8 +26,10 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(name: String) {
     Text(text = "Hello $name!",
         modifier = Modifier
+            .width(200.dp)
             .height(240.dp)
-            .width(80.dp)
+            .clickable(onClick = { })
+            .padding(all = 24.dp)
     )
 }
 
