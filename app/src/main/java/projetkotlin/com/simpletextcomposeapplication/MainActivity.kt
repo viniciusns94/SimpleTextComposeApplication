@@ -1,39 +1,37 @@
 package projetkotlin.com.simpletextcomposeapplication
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.Button
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GreetingButton()
+            GreetingText(name = "world")
         }
     }
 }
 
 @Composable
 fun GreetingText(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Composable
-fun GreetingButton(){
-    Button(onClick = { }) {
-        GreetingText(name = "Button!!")
-        GreetingText(name = "Inovando Button!!")
-    }
+    Text(text = "Hello $name!",
+        modifier = Modifier
+            .height(240.dp)
+            .width(80.dp)
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreviewMainActivity() {
-    GreetingButton()
+    GreetingText(name = "world")
 }
