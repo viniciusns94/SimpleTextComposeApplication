@@ -26,9 +26,9 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(name: String) {
     Text(text = "Hello $name!",
         modifier = Modifier
+            .clickable(onClick = { })
             .width(200.dp)
             .height(240.dp)
-            .clickable(onClick = { })
             .padding(all = 24.dp)
     )
 }
